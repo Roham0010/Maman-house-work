@@ -40,7 +40,7 @@
             margin: 10px 0 5px;
             font-size: 1.2em;
         }
-        input, select {
+        input, select, textarea {
             padding: 10px;
             width: 80%;
             max-width: 400px;
@@ -61,14 +61,14 @@
             background-color: #27ae60;
         }
         .icons {
-            margin-top: 30px;
+            margin: 20px 0;
             display: flex;
             justify-content: center;
             gap: 20px;
         }
-        .icons img {
-            width: 100px;
-            height: 100px;
+        .icons svg {
+            width: 80px;
+            height: 80px;
         }
     </style>
 </head>
@@ -76,14 +76,25 @@
     <div class="container">
         <h1>ثبت‌نام خانه‌تکونی ننه</h1>
         
+        <div class="icons">
+            <!-- جارو -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#FFD700" d="M12 42h24v-4H12z"/><path fill="#8B4513" d="M20 4h8v30h-8z"/><path fill="#FFD700" d="M14 34h20l4 8H10z"/></svg>
+            <!-- جاروبرقی -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#FF4500" d="M18 8h12v20H18z"/><path fill="#000" d="M22 28h4v8h-4z"/><path fill="#FF4500" d="M16 36h16v4H16z"/></svg>
+            <!-- خاک‌انداز -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#4682B4" d="M10 28h28v12H10z"/><path fill="#4682B4" d="M18 20h12v8H18z"/></svg>
+            <!-- دستمال -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#87CEEB" d="M14 14h20v20H14z"/><path fill="#FFF" d="M18 18h12v12H18z"/></svg>
+        </div>
+        
         <div class="timer" id="timer"></div>
         
         <form>
             <label for="name">نام و نام خانوادگی</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" placeholder="مثلاً: علی جول‌جولی" required>
             
             <label for="phone">شماره تلفن</label>
-            <input type="tel" id="phone" name="phone" required>
+            <input type="tel" id="phone" name="phone" placeholder="برای هماهنگی نون و پیاز" required>
             
             <label for="skills">مهارت‌های خانه‌تکونی</label>
             <select id="skills" name="skills" multiple required>
@@ -92,20 +103,20 @@
                 <option value="شستن ظرف">شستن ظرف</option>
                 <option value="پرواز با جارو">پرواز با جارو</option>
                 <option value="جاروبرقی بدون برق">جاروبرقی بدون برق</option>
+                <option value="مَکَم مکم مِمَلِم">مَکَم مکم مِمَلِم</option>
             </select>
+            
+            <label for="portfolio">نمونه کار (رزومه یا عکس بیومتریک)</label>
+            <input type="file" id="portfolio" name="portfolio" accept="image/*, .pdf">
             
             <label for="commitment">تعهد به آوردن نون و پیاز از خونه</label>
             <input type="checkbox" id="commitment" name="commitment" required>
             
-            <button type="submit">ثبت‌نام</button>
+            <label for="message">یه توضیح کوتاه برای ننه</label>
+            <textarea id="message" name="message" placeholder="چرا باید تورو قبول کنه؟" rows="4"></textarea>
+            
+            <button type="submit">ثبت‌نام کن!</button>
         </form>
-        
-        <div class="icons">
-            <img src="https://img.icons8.com/color/100/000000/broom.png" alt="جارو">
-            <img src="https://img.icons8.com/color/100/000000/vacuum-cleaner.png" alt="جاروبرقی">
-            <img src="https://img.icons8.com/color/100/000000/dustpan.png" alt="خاک‌انداز">
-            <img src="https://img.icons8.com/color/100/000000/cleaning.png" alt="تمیزکاری">
-        </div>
     </div>
 
     <script>
